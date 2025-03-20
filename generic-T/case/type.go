@@ -5,13 +5,13 @@ import (
 )
 
 type user struct {
-	Id   string
+	Id   int64
 	Name string
 	Age  int
 }
 
 type address struct {
-	Id           string
+	Id           int
 	ProvinceName string
 	CityName     string
 }
@@ -35,9 +35,9 @@ func myPrint[T any](ch chan T) {
 func TTypeCase() {
 	userMp := make(Map[int, user], 0)
 
-	userMp[1] = user{Id: "1", Name: "1", Age: 1}
-	userMp[2] = user{Id: "2", Name: "2", Age: 1}
-	userMp[3] = user{Id: "3", Name: "3", Age: 1}
+	userMp[1] = user{Id: 1, Name: "1", Age: 1}
+	userMp[2] = user{Id: 2, Name: "2", Age: 1}
+	userMp[3] = user{Id: 3, Name: "3", Age: 1}
 
 	list := mapToList(userMp)
 
@@ -51,15 +51,14 @@ func TTypeCase() {
 		ch <- data
 	}
 
-	close(ch)
 }
 
 func TTypeCase1() {
 	userMp := make(Map[int, user], 0)
 
-	userMp[1] = user{Id: "1", Name: "1", Age: 1}
-	userMp[2] = user{Id: "2", Name: "2", Age: 1}
-	userMp[3] = user{Id: "3", Name: "3", Age: 1}
+	userMp[1] = user{Id: 1, Name: "1", Age: 1}
+	userMp[2] = user{Id: 2, Name: "2", Age: 1}
+	userMp[3] = user{Id: 3, Name: "3", Age: 1}
 
 	list := mapToList(userMp)
 
@@ -73,7 +72,6 @@ func TTypeCase1() {
 		ch <- data
 	}
 
-	close(ch)
 }
 
 type Chan[T any] chan T

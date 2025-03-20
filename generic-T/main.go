@@ -10,6 +10,8 @@ import (
 func main() {
 	_case.Simple()
 	_case.TTypeCase()
+	_case.TTypeCase1()
+	_case.InterfaceCase()
 
 	// 不让主协程过早退出
 
